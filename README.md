@@ -62,7 +62,7 @@ Buscar por substring, sem diferenciar maiusculas de minusculas:
 ```text
 search --name Ana
 search --phone 85
-search --email gmail
+search --email acme
 ```
 
 O comando `search` aceita apenas uma flag por vez e atualiza `lib/parse.json` com uma lista de strings contendo os resultados.
@@ -92,8 +92,22 @@ exit
 - `AgendaCli.Contacts`: funcoes puras para adicionar, editar, remover, listar e buscar contatos.
 - `AgendaCli.Store`: leitura e escrita de arquivos JSON com Jason.
 
-## Testes
+## Validacao manual
 
-```bash
-mix test
+Depois de executar `mix run`, use este roteiro no prompt `agenda>`.
+Substitua `<id>` pelo id exibido no comando `list`.
+
+```text
+list
+add --name Ana Lima --company Acme --phone 85912345678 --email ana.lima@acme.com
+list
+search --name ana
+search --phone 85
+search --email acme
+show <id>
+edit <id> --phone 85912345679
+edit <id> --name Ana Silva --company Acme LTDA --phone 85912345678 --email ana.silva@acme.com
+del <id>
+test
+exit
 ```
