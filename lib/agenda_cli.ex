@@ -6,10 +6,7 @@ defmodule AgendaCli do
 
   @impl true
   def start(_type, _args) do
-    if Application.get_env(:agenda_cli, :run_cli, true) do
-      main()
-    end
-
+    main()
     {:ok, self()}
   end
 
