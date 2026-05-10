@@ -1,0 +1,7 @@
+/_build/
+/deps/
+/contacts.json
+/lib/parse.json
+/.elixir_ls/
+/erl_crash.dump
+*.ez
